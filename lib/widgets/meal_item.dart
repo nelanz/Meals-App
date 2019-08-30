@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import '../screens/meal_detail_screen.dart';
+
 import '../models/meal.dart';
+import '../screens/meal_detail_screen.dart';
 
 class MealItem extends StatelessWidget {
   final String id;
@@ -9,6 +10,7 @@ class MealItem extends StatelessWidget {
   final int duration;
   final Complexity complexity;
   final Affordability affordability;
+  final Function removeItem;
 
   const MealItem(
       {@required this.id,
@@ -16,23 +18,8 @@ class MealItem extends StatelessWidget {
       @required this.imageUrl,
       @required this.duration,
       @required this.complexity,
-      @required this.affordability});
-
-  String get complexityText {
-    switch (complexity) {
-      case Complexity.Simple:
-        return 'Simple';
-
-      case Complexity.Challenging:
-        return 'Challenging';
-
-      case Complexity.Hard:
-        return 'Hard';
-
-      default:
-        return 'Unknown';
-    }
-  }
+      @required this.affordability,
+      @required this.removeItem});
 
   String get affordabilityText {
     switch (affordability) {
@@ -50,8 +37,20 @@ class MealItem extends StatelessWidget {
     }
   }
 
-  void selectMeal(BuildContext context) {
-    Navigator.of(context).pushNamed(MealDetailScreen.routeName, arguments: id);
+  String get complexityText {
+    switch (complexity) {
+      case Complexity.Simple:
+        return 'Simple';
+
+      case Complexity.Challenging:
+        return 'Challenging';
+
+      case Complexity.Hard:
+        return 'Hard';
+
+      default:
+        return 'Unknown';
+    }
   }
 
   @override
@@ -133,5 +132,15 @@ class MealItem extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void selectMeal(BuildContext context) {
+    Navigator.of(context)
+        .pushNamed(MealDetailScreen.routeName, arguments: id)
+        .then((result) => {
+          if(result != null) {
+            removeItem(result)
+          }
+    });
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import '../dummy_data.dart';
 
 class MealDetailScreen extends StatelessWidget {
@@ -78,6 +77,10 @@ class MealDetailScreen extends StatelessWidget {
             ))
           ],
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => Navigator.of(context).pop(mealId),
+        child: Icon(Icons.delete),
       ),
     );
   }
