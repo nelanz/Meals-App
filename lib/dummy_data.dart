@@ -21,7 +21,7 @@ const DUMMY_CATEGORIES = const [
   ),
   Category(
     id: 'c4',
-    title: 'German',
+    title: 'Polish',
     color: Colors.amber,
   ),
   Category(
@@ -156,34 +156,35 @@ const DUMMY_MEALS = const [
     categories: [
       'c4',
     ],
-    title: 'Wiener Schnitzel',
-    affordability: Affordability.Luxurious,
+    title: 'Russian Dumplings',
+    affordability: Affordability.Affordable,
     complexity: Complexity.Challenging,
     imageUrl:
-    'https://cdn.pixabay.com/photo/2018/03/31/19/29/schnitzel-3279045_1280.jpg',
+    'https://cdn.pixabay.com/photo/2017/12/04/06/22/baking-2996391_1280.jpg',
     duration: 60,
     ingredients: [
-      '8 Veal Cutlets',
-      '4 Eggs',
-      '200g Bread Crumbs',
-      '100g Flour',
-      '300ml Butter',
-      '100g Vegetable Oil',
+      '300g Flour',
+      '125ml Hot Water',
+      '1 Egg',
+      '500g Fat Cottage Cheese',
+      '500g Patatoes',
       'Salt',
-      'Lemon Slices'
+      'Pepper',
+      'Butter'
     ],
     steps: [
-      'Tenderize the veal to about 2–4mm, and salt on both sides.',
-      'On a flat plate, stir the eggs briefly with a fork.',
-      'Lightly coat the cutlets in flour then dip into the egg, and finally, coat in breadcrumbs.',
-      'Heat the butter and oil in a large pan (allow the fat to get very hot) and fry the schnitzels until golden brown on both sides.',
-      'Make sure to toss the pan regularly so that the schnitzels are surrounded by oil and the crumbing becomes ‘fluffy’.',
-      'Remove, and drain on kitchen paper. Fry the parsley in the remaining oil and drain.',
-      'Place the schnitzels on awarmed plate and serve garnishedwith parsley and slices of lemon.'
+      'To make the dough, combine the flour, eggs, water and a 1/2 teaspoon of salt',
+      'Peel the patatoes and cook until they\'re soft',
+      'Cool down the patatoes and mix them with cheese and a little bit of salt and pepper',
+      'Roll the dough into a thin layer and cut into small circles',
+      'Place a small amount of patatoes miced with cheese in the center of each circle',
+      'Fold the dough',
+      'Boil the dumplings in salted water until they float to the surface',
+      'Serve them with some melted butter and a little bit of fried onion'
     ],
     isGlutenFree: false,
     isVegan: false,
-    isVegetarian: false,
+    isVegetarian: true,
     isLactoseFree: false,
   ),
   Meal(
@@ -399,6 +400,36 @@ const DUMMY_MEALS = const [
       'Halve the tomatoes',
       'Mix with asparagus, salad and dressing',
       'Serve with Baguette'
+    ],
+    isGlutenFree: true,
+    isVegan: true,
+    isVegetarian: true,
+    isLactoseFree: true,
+  ),
+  Meal(
+    id: 'm11',
+    categories: [
+      'c4',
+    ],
+    title: 'Pickled Cucambers',
+    affordability: Affordability.Affordable,
+    complexity: Complexity.Simple,
+    imageUrl:
+    'https://cdn.pixabay.com/photo/2016/07/15/22/49/pickled-cucumbers-1520638_1280.jpg',
+    duration: 720,
+    ingredients: [
+      'Small Cucambers',
+      'Polish Garlic',
+      'Dill',
+      'Fresh Horseradish',
+      'Salt'
+    ],
+    steps: [
+      'Wash the cucambers and put them in jars vertically',
+      'Peel the garlic and horseradish and put them in jars as well',
+      'Put one big tablespoon of salt for one liter of water and boil it',
+      'Put the boiling water with salt into the jar and close the jar quickly',
+      'Put jars under a blanket for 12 hours and then store them in a cold, dark place'
     ],
     isGlutenFree: true,
     isVegan: true,
